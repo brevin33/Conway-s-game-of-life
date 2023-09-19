@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class StartGameOfLife : MonoBehaviour
 {
-    [SerializeField]
-    GameOfLife game;
+    public GameOfLife game;
 
     private void OnMouseDown()
     {

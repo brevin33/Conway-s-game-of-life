@@ -16,7 +16,10 @@ public class GameOfLife : MonoBehaviour
     float cellSize = .1f;
     [SerializeField]
     GameObject Cube;
+    [SerializeField]
+    GameObject StartButton;
     public bool runGame = true;
+
 
 
     bool[,] grid;
@@ -41,6 +44,8 @@ public class GameOfLife : MonoBehaviour
                 cells[x,y] = script;
             }
         }
+        GameObject startButton = Instantiate(StartButton, new Vector3((gridSizeX + 1.5f) * cellSize, .5f), Quaternion.identity, transform);
+        startButton.GetComponent<StartGameOfLife>().game = this;
         nextStep();
     }
 
